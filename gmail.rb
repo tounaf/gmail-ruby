@@ -1,6 +1,9 @@
 require 'gmail'
 require 'dotenv'
+Dotenv.load('.env')
 
+username = ENV['USERNAME']
+password = ENV['PASSWORD']
 def connect(username,password)
     gmail = Gmail.connect(username,password)
     if gmail.logged_in?
